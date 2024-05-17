@@ -1,0 +1,82 @@
+.menu-li{
+    transition: 0.5s all ease-in-out;
+    a{
+        background-position: center left 15px;
+    }
+    ul{
+        li{
+            a{
+                &:hover{
+                    color: #000;
+                }
+            }
+        }
+    }
+    .down-arrow{
+        transition: 0.5s all ease-in-out;
+        &.up-arrow{
+            transform: rotate(180deg);
+        }
+    }
+    &:hover{
+        a{
+            background-color: rgba(0,0,0,0.05);
+            color: #000;
+        }
+        ul{
+            li{
+                a{
+                    background-color: transparent;
+                    background-image: none !important;
+                }
+            }
+        }
+    }
+    &.home-li{
+        a{
+            &:hover{
+                background-image: url(/images/home-hover.svg);
+            }
+        }
+    }
+
+    &.products-li{
+        a{
+            &:hover{
+                background-image: url(/images/products-hover.svg);
+            }
+        }
+    }
+
+    &.customers-li{
+        a{
+            &:hover{
+                background-image: url(/images/customers-hover.svg);
+            }
+        }
+    }
+
+    &.shop-li{
+        a{
+            &:hover{
+                background-image: url(/images/shop-hover.svg);
+            }
+        }
+    }
+
+    &.income-li{
+        a{
+            &:hover{
+                background-image: url(/images/income-hover.svg);
+            }
+        }
+    }
+
+    &.promote-li{
+        a{
+            &:hover{
+                background-image: url(/images/promote-hover.svg);
+            }
+        }
+    }
+}
