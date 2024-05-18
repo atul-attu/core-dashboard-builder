@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react'
 import LeftSidebar from '@/components/leftSidebar/LeftSidebar'
 import RightSidebar from '@/components/rightSidebar/RightSidebar'
