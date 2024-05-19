@@ -15,61 +15,71 @@ const CustomerCard = () => {
             "name": "Alice Smith",
             "username": "alicesmith",
             "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-1.jpg",
-            "checked": false
+            "checked": false,
+            "email":"alicesmith@gmail.com"
         },
         {
             "name": "Bob Johnson",
             "username": "bobjohnson",
             "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-5.jpg",
-            "checked": false
+            "checked": false,
+            "email":"bobjohnson@gmail.com"
         },
         {
             "name": "Emma Davis",
             "username": "emmadavis",
             "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-3.jpg",
-            "checked": false
+            "checked": false,
+            "email":"emmadavis@gmail.com"
         },
         {
             "name": "Michael Wilson",
             "username": "michaelwilson",
             "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-4.jpg",
-            "checked": false
+            "checked": false,
+            "email":"michaelwilson@gmail.com"
         },
         {
             "name": "Sophia Brown",
             "username": "sophiabrown",
             "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-5.jpg",
-            "checked": false
+            "checked": false,
+            "email":"sophiabrown@gmail.com"
         },
         {
             "name": "David Martinez",
             "username": "davidmartinez",
             "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-3.jpg",
-            "checked": false
+            "checked": false,
+            "email":"davidmartinez@gmail.com"
         },
         {
             "name": "Olivia Anderson",
             "username": "oliviaanderson",
             "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-4.jpg",
-            "checked": false
+            "checked": false,
+            "email":"oliviaanderson@gmail.com"
         },
         {
             "name": "James Taylor",
             "username": "jamestaylor",
             "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-2.jpg",
-            "checked": false
+            "checked": false,
+            "email":"jamestaylor@gmail.com"
         },
         {
             "name": "Ava Thomas",
             "username": "avathomas",
             "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-1.jpg",
-            "checked": false
+            "checked": false,
+            "email":"avathomas@gmail.com"
         },
         {
             "name": "Daniel Hernandez",
             "username": "danielhernandez",
             "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-4.jpg",
-            "checked": false
+            "checked": false,
+            "email":"danielhernandez@gmail.com"
         }
     ];
 
