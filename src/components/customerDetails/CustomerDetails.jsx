@@ -11,22 +11,22 @@ const CustomerDetail = () => {
     const selectedCustomer = useSelector((state) => state.customer.selectedCustomer);
 
     if (!selectedCustomer) {
-        return <div className='w-[calc(100%-336px)] flex customer-detail mt-4 flex-col bg-white p-8 rounded-2xl'>No customer selected</div>;
+        return <div className='w-[calc(100%-336px)] flex customer-detail mt-4 flex-col bg-white p-8 rounded-2xl max-w-991:rounded-md max-w-991:w-[800px] max-w-991:mt-[10px] max-w-991:p-[10px]'>No customer selected</div>;
     }
 
     return (
-        <div className='w-[calc(100%-336px)] flex customer-detail mt-4 flex-col bg-white p-8 h-[calc(100vh-145px)] overflow-auto rounded-2xl'>
-            <div className='w-[100%] flex justify-between items-center'>
+        <div className='w-[calc(100%-336px)] flex customer-detail mt-4 flex-col bg-white p-8 h-[calc(100vh-145px)] overflow-auto rounded-2xl max-w-991:rounded-md max-w-991:w-[500px] max-w-991:mt-[10px] max-w-991:p-[10px]'>
+            <div className='w-[100%] flex justify-between items-center max-w-991:flex-col max-w-991:justify-start max-w-991:items-start'>
                 <div className='flex justify-center items-center'>
-                    <img src={selectedCustomer.image_url} alt={selectedCustomer.name} width={100} height={100} className='rounded-[100px]' />
-                    <div className='flex flex-col ml-5'>
-                        <h4 className='text-2xl font-semibold text-black'>{selectedCustomer.name}</h4>
-                        <p className='text-base text-[rgba(0,0,0,0.4)]'>@{selectedCustomer.username}</p>
+                    <img src={selectedCustomer.image_url} alt={selectedCustomer.name} width={100} height={100} className='rounded-[100px] max-w-991:w-[50px] max-w-991:h-[50px]' />
+                    <div className='flex flex-col ml-5 max-w-991:ml-[10px]'>
+                        <h4 className='text-2xl font-semibold text-black max-w-991:text-base'>{selectedCustomer.name}</h4>
+                        <p className='text-base text-[rgba(0,0,0,0.4)] max-w-991:text-sm'>@{selectedCustomer.username}</p>
                     </div>
                 </div>
-                <div className='flex justify-start'>
-                    <button className='font-base font-semibold text-black border border-[rgba(0,0,0,0.2)] py-3 rounded-lg px-10 cursor-pointer'>Follow</button>
-                    <button className='font-base font-semibold text-black border border-[rgba(0,0,0,0.2)] py-3 rounded-lg px-8 cursor-pointer ml-3'>Message</button>
+                <div className='flex justify-start max-w-991:mt-3 max-w-991:items-start'>
+                    <button className='font-base font-semibold text-black border border-[rgba(0,0,0,0.2)] py-3 rounded-lg px-10 cursor-pointer max-w-991:text-sm max-w-991:py-[10px] max-w-991:px-6'>Follow</button>
+                    <button className='font-base font-semibold text-black border border-[rgba(0,0,0,0.2)] py-3 rounded-lg px-8 cursor-pointer ml-3 max-w-991:text-sm max-w-991:py-[10px] max-w-991:px-6'>Message</button>
                 </div>
             </div>
             <p className='text-base text-black mt-8 font-semibold mb-3'>Private Note</p>

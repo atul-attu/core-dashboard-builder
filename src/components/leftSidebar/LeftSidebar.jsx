@@ -7,7 +7,7 @@ import BottomHelp from '../bottomHelp/BottomHelp';
 
 const LeftSidebar = () => {
     return (
-        <div className='w-[100%] max-w-[350px] h-[calc(100vh-32px)] bg-white p-4 rounded-2xl relative'>
+        <div className='w-[100%] max-w-[350px] h-[calc(100vh-32px)] bg-white p-4 rounded-2xl relative max-w-1279:hidden'>
             <Image src='/images/logo-dark.png' alt='logo image' width={60} height={60} />
             <LeftNavMenu />
             <BottomHelp />

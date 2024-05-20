@@ -28,3 +28,9 @@ input[type="radio"]{
         }
     }
 }
+
+@media screen and (max-width: 991px) {
+    .cc-label::before{
+        top: 10px;
+    }
+}

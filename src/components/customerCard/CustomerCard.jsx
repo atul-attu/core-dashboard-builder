@@ -90,7 +90,7 @@ const CustomerCard = () => {
     return (
         <div className='w-[100%] flex flex-col'>
             {customerList.map((customer, index) => (
-                <div key={index} className='w-[100%] flex justify-start mb-4'>
+                <div key={index} className='w-[100%] flex justify-start mb-4 max-w-991:mb-0'>
                     <input
                         type="radio"
                         name="customer_card"
@@ -100,10 +100,10 @@ const CustomerCard = () => {
                         onChange={() => handleChange(customer)}
                     />
                     <label htmlFor={`customer_card_${index}`} className='w-[100%] flex justify-start align-top py-2 px-3 cursor-pointer rounded-xl cc-label'>
-                        <Image src={customer.image_url} width={50} height={50} alt={customer.name} className='rounded-full' />
+                        <Image src={customer.image_url} width={50} height={50} alt={customer.name} className='rounded-full max-w-991:w-8 h-8' />
                         <div className='w-[calc(100%-50px)] flex flex-col pl-3'>
-                            <strong className='text-base leading-6 font-bold text-[#000]'>{customer.name}</strong>
-                            <span className='text-sm text-[rgba(0,0,0,0.6)]'>@{customer.username}</span>
+                            <strong className='text-base leading-6 font-bold text-[#000] max-w-991:text-sm max-w-991:leading-5'>{customer.name}</strong>
+                            <span className='text-sm text-[rgba(0,0,0,0.6)] max-w-991:text-xs max-w-991:leading-4'>@{customer.username}</span>
                         </div>
                     </label>
                 </div>
