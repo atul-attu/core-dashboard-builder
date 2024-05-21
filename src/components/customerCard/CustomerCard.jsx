@@ -1,7 +1,6 @@
-// components/CustomerCard.js
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { selectCustomer } from '../../store/customerSlice';
@@ -9,79 +8,21 @@ import styles from './customerCard.scss';
 
 const CustomerCard = () => {
     const dispatch = useDispatch();
+    const [customerList, setCustomerList] = useState([]);
 
-    const customerList = [
-        {
-            "name": "Alice Smith",
-            "username": "alicesmith",
-            "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-1.jpg",
-            "checked": false,
-            "email":"alicesmith@gmail.com"
-        },
-        {
-            "name": "Bob Johnson",
-            "username": "bobjohnson",
-            "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-5.jpg",
-            "checked": false,
-            "email":"bobjohnson@gmail.com"
-        },
-        {
-            "name": "Emma Davis",
-            "username": "emmadavis",
-            "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-3.jpg",
-            "checked": false,
-            "email":"emmadavis@gmail.com"
-        },
-        {
-            "name": "Michael Wilson",
-            "username": "michaelwilson",
-            "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-4.jpg",
-            "checked": false,
-            "email":"michaelwilson@gmail.com"
-        },
-        {
-            "name": "Sophia Brown",
-            "username": "sophiabrown",
-            "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-5.jpg",
-            "checked": false,
-            "email":"sophiabrown@gmail.com"
-        },
-        {
-            "name": "David Martinez",
-            "username": "davidmartinez",
-            "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-3.jpg",
-            "checked": false,
-            "email":"davidmartinez@gmail.com"
-        },
-        {
-            "name": "Olivia Anderson",
-            "username": "oliviaanderson",
-            "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-4.jpg",
-            "checked": false,
-            "email":"oliviaanderson@gmail.com"
-        },
-        {
-            "name": "James Taylor",
-            "username": "jamestaylor",
-            "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-2.jpg",
-            "checked": false,
-            "email":"jamestaylor@gmail.com"
-        },
-        {
-            "name": "Ava Thomas",
-            "username": "avathomas",
-            "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-1.jpg",
-            "checked": false,
-            "email":"avathomas@gmail.com"
-        },
-        {
-            "name": "Daniel Hernandez",
-            "username": "danielhernandez",
-            "image_url": "https://ui8-core.herokuapp.com/img/content/avatar-4.jpg",
-            "checked": false,
-            "email":"danielhernandez@gmail.com"
-        }
-    ];
+    useEffect(() => {
+        const fetchCustomerList = async () => {
+            try {
+                const response = await fetch('https://mocki.io/v1/12e2d365-1240-44ef-ba1c-a2278603b58a');
+                const data = await response.json();
+                setCustomerList(data);
+            } catch (error) {
+                console.error('Error fetching customer list:', error);
+            }
+        };
+
+        fetchCustomerList();
+    }, []);
 
     const handleChange = (customer) => {
         dispatch(selectCustomer(customer));
@@ -99,8 +40,8 @@ const CustomerCard = () => {
                         defaultChecked={customer.checked}
                         onChange={() => handleChange(customer)}
                     />
-                    <label htmlFor={`customer_card_${index}`} className='w-[100%] flex justify-start align-top py-2 px-3 cursor-pointer rounded-xl cc-label'>
-                        <Image src={customer.image_url} width={50} height={50} alt={customer.name} className='rounded-full max-w-991:w-8 h-8' />
+                    <label htmlFor={`customer_card_${index}`} className='w-[100%] flex justify-start align-top py-2 px-3 cursor-pointer rounded-xl cc-label max-w-991:rounded-none'>
+                        <Image src={customer.image_url} width={50} height={50} alt={customer.name} className='rounded-full max-w-991:w-8 max-w-991:h-8' />
                         <div className='w-[calc(100%-50px)] flex flex-col pl-3'>
                             <strong className='text-base leading-6 font-bold text-[#000] max-w-991:text-sm max-w-991:leading-5'>{customer.name}</strong>
                             <span className='text-sm text-[rgba(0,0,0,0.6)] max-w-991:text-xs max-w-991:leading-4'>@{customer.username}</span>
@@ -110,6 +51,6 @@ const CustomerCard = () => {
             ))}
         </div>
     );
-}
+};
 
 export default CustomerCard;

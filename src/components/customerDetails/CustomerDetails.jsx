@@ -11,11 +11,11 @@ const CustomerDetail = () => {
     const selectedCustomer = useSelector((state) => state.customer.selectedCustomer);
 
     if (!selectedCustomer) {
-        return <div className='w-[calc(100%-336px)] flex customer-detail mt-4 flex-col bg-white p-8 rounded-2xl max-w-991:rounded-md max-w-991:w-[800px] max-w-991:mt-[10px] max-w-991:p-[10px]'>No customer selected</div>;
+        return <div className='w-[calc(100%-336px)] flex customer-detail mt-4 flex-col bg-white p-8 rounded-2xl max-w-991:rounded-md max-w-991:w-[800px] max-w-991:mt-[10px] max-w-991:p-[10px] max-w-991:ml-[10px]'>No customer selected</div>;
     }
 
     return (
-        <div className='w-[calc(100%-336px)] flex customer-detail mt-4 flex-col bg-white p-8 h-[calc(100vh-145px)] overflow-auto rounded-2xl max-w-991:rounded-md max-w-991:w-[500px] max-w-991:mt-[10px] max-w-991:p-[10px]'>
+        <div className='w-[calc(100%-336px)] flex customer-detail mt-4 flex-col bg-white p-8 h-[calc(100vh-145px)] overflow-auto rounded-2xl max-w-991:rounded-md max-w-991:w-[500px] max-w-991:mt-[10px] max-w-991:p-[10px] max-w-991:ml-[10px]'>
             <div className='w-[100%] flex justify-between items-center max-w-991:flex-col max-w-991:justify-start max-w-991:items-start'>
                 <div className='flex justify-center items-center'>
                     <img src={selectedCustomer.image_url} alt={selectedCustomer.name} width={100} height={100} className='rounded-[100px] max-w-991:w-[50px] max-w-991:h-[50px]' />

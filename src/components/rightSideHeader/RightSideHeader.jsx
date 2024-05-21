@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './rightSideHeader.scss'
+import MessageForm from '../messageForm/MessageForm';
 
 const RightSideHeader = () => {
     return (
@@ -44,6 +45,7 @@ const RightSideHeader = () => {
                     <Image src='/images/user.jpeg' alt='' width={50} height={50} />
                 </div>
             </div>
+            <MessageForm />
         </div>
     )
 }
