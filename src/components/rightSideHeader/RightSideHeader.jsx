@@ -1,11 +1,21 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import styles from './rightSideHeader.scss'
+import styles from './rightSideHeader.scss';
 import MessageForm from '../messageForm/MessageForm';
 
 const RightSideHeader = () => {
+    const [showMessageForm, setShowMessageForm] = useState(false);
+
+    const handleCreateButtonClick = () => {
+        setShowMessageForm(true);
+    };
+
+    const handleFormClose = () => {
+        setShowMessageForm(false);
+    };
+
     return (
         <div className="bg-white shadow-md py-4 px-6 header">
             <div className="search">
@@ -23,7 +33,7 @@ const RightSideHeader = () => {
                 </form>
             </div>
             <div className="rightbtns">
-                <button type="button" className="bluebtn text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 mb-2">
+                <button type="button" className="bluebtn text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 mb-2" onClick={handleCreateButtonClick}>
                     <svg className="w-6 h-6 fill-current text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00000099" viewBox="0 0 24 24">
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14m-7 7V5" />
                     </svg>
@@ -45,9 +55,9 @@ const RightSideHeader = () => {
                     <Image src='/images/user.jpeg' alt='' width={50} height={50} />
                 </div>
             </div>
-            <MessageForm />
+            {showMessageForm && <MessageForm onClose={handleFormClose} />}
         </div>
-    )
+    );
 }
 
-export default RightSideHeader
+export default RightSideHeader;
